@@ -44,13 +44,9 @@ class DualHeaderWithHint extends StatelessWidget {
       new Expanded(
         child: new Container(
           margin: const EdgeInsets.only(left: 24.0),
-          child: new FittedBox(
-            fit: BoxFit.scaleDown,
-            alignment: Alignment.centerLeft,
-            child: new Text(
-              name,
-              style: textTheme.body1.copyWith(fontSize: 15.0),
-            ),
+          child: new Text(
+            name,
+            style: textTheme.body1.copyWith(fontSize: 15.0),
           ),
         ),
       ),
@@ -91,7 +87,7 @@ class CollapsibleBody extends StatelessWidget {
                   child: child))),
       const Divider(height: 1.0),
       new Container(
-          padding: const EdgeInsets.symmetric(vertical: 16.0),
+          padding: const EdgeInsets.symmetric(vertical: 8.0),
           child: new Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
@@ -204,7 +200,6 @@ class _ModInfoState extends State<ModInfo> {
               builder: (BuildContext context) {
                 return new CollapsibleBody(
                   editable: false,
-                  margin: const EdgeInsets.symmetric(horizontal: 8.0),
                   onSave: () {
                     Form.of(context).save();
                     close();
@@ -222,43 +217,8 @@ class _ModInfoState extends State<ModInfo> {
           );
         },
       ),
-      // new ModInfoItem<String>(
-      //   name: 'Settings',
-      //   builder: (ModInfoItem<String> item) {
-      //     void close() {
-      //       setState(() {
-      //         item.isExpanded = false;
-      //       });
-      //     }
-
-      //     return new Form(
-      //       child: new Builder(
-      //         builder: (BuildContext context) {
-      //           return new CollapsibleBody(
-      //             editable: false,
-      //             margin: const EdgeInsets.symmetric(horizontal: 8.0),
-      //             onSave: () {
-      //               Form.of(context).save();
-      //               close();
-      //             },
-      //             onCancel: () {
-      //               Form.of(context).reset();
-      //               close();
-      //             },
-      //             child: new Column(children: <Widget>[
-      //               new Row(children: <Widget>[
-      //                 new Text('Enabled'),
-      //                 new Switch(value: false, onChanged: (bool value) {})
-      //               ], mainAxisAlignment: MainAxisAlignment.spaceBetween),
-      //             ]),
-      //           );
-      //         },
-      //       ),
-      //     );
-      //   },
-      // ),
-      ModInfoItem<String>(
-        name: 'Removal',
+      new ModInfoItem<String>(
+        name: 'Package Management',
         builder: (ModInfoItem<String> item) {
           void close() {
             setState(() {
@@ -289,12 +249,8 @@ class _ModInfoState extends State<ModInfo> {
           }
 
           var paddedOutlineButton = (var text, var onPressed) {
-            return new Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                child: new OutlineButton(
-                    highlightElevation: 0.0,
-                    child: text,
-                    onPressed: onPressed));
+            return new OutlineButton(
+                highlightElevation: 0.0, child: text, onPressed: onPressed);
           };
 
           return new Form(
@@ -302,7 +258,6 @@ class _ModInfoState extends State<ModInfo> {
               builder: (BuildContext context) {
                 return new CollapsibleBody(
                   editable: false,
-                  margin: const EdgeInsets.symmetric(horizontal: 8.0),
                   onSave: () {
                     Form.of(context).save();
                     close();
