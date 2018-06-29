@@ -10,7 +10,7 @@ import com.jaredrummler.android.shell.Shell
 
 import java.io.File
 
-class MainService : BroadcastReceiver() {
+class DaemonReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
         if (Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())) {
@@ -26,4 +26,5 @@ class MainService : BroadcastReceiver() {
             }
         }
     }
+
 }

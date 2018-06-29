@@ -19,8 +19,15 @@
         android:name="io.flutter.app.FlutterApplication"
         android:icon="@mipmap/ic_launcher"
         android:label="Maniac">
+
         <receiver
-            android:name="io.libre.maniac.MainService"
+            android:name=".CLIReceiver"
+            android:enabled="true"
+            android:exported="true">
+        </receiver>
+
+        <receiver
+            android:name=".DaemonReceiver"
             android:enabled="true"
             android:exported="true"
             android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
@@ -31,6 +38,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
+
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density"
