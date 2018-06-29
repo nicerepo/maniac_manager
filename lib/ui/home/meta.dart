@@ -21,9 +21,9 @@
 //===------------------------------------------------------------------------------------------===//
 
 class Meta {
-  static const APP_VERSION = 'June 2018';
+  static const APP_VERSION = 'July 2018';
   static const ENGINE_VERSION = 'Rolling';
   static const COPYRIGHT = '© 2018 The MANIAC Developers';
   static const HOMEPAGE_URL = 'https://libre.io';
-  static const SOURCECODE_URL = 'https://github.com/thisisnicerepo';
+  static const SOURCECODE_URL = 'https://github.com/nicerepo';
 }
