@@ -64,6 +64,16 @@ android {
             signingConfig signingConfigs.release
         }
     }
+
+    // FIXME: workaround until Flutter supports FAT APKs & x86
+    splits {
+        abi {
+            enable true
+            reset()
+            include "arm64-v8a", "armeabi-v7a"
+            universalApk false
+        }
+    }
 }
 
 flutter {
@@ -72,6 +82,5 @@ flutter {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:+"
-
-    compile 'com.jaredrummler:android-shell:1.0.0'
+    implementation 'com.jaredrummler:android-shell:+'
 }
