@@ -1,5 +1,12 @@
 # maniac_manager
 
+## Quick Start
+```
+$ git clone https://github.com/flutter/flutter /opt/flutter
+$ PATH=$PATH:/opt/flutter/bin
+$ git clone https://github.com/nicerepo/maniac_manager
+$ cd maniac_manager && flutter run
+```
 ## Copying
 maniac_manager is free software. You may freely distribute it under the terms of the license agreement found in LICENSE.
 
