@@ -15,7 +15,7 @@ dependencies:
 
   flutter_sodium:
     git:
-      url: git://github.com/thisisnicerepo/flutter_sodium
+      url: git://github.com/nicerepo/flutter_sodium
 
   archive: any
   convert: any

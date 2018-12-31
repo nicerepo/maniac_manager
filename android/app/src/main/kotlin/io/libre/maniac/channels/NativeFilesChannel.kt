@@ -28,7 +28,7 @@ class NativeFilesChannel private constructor(private val registrar: Registrar) :
         when (call.method) {
             "pickFile" -> {
                 pendingResult = result
-                val type = call.argument("mimeType") as String
+                val type = call.argument<String>("mimeType")!!
                 val intent = Intent()
                 intent.setAction(Intent.ACTION_GET_CONTENT)
                 intent.addCategory(Intent.CATEGORY_OPENABLE)

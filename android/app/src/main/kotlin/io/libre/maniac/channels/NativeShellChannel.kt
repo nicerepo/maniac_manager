@@ -26,11 +26,11 @@ class NativeShellChannel private constructor(private val registrar: Registrar) :
     override fun onMethodCall(call: MethodCall, result: Result) {
         when (call.method) {
             "runCommand" -> {
-                Shell.SU.run(call.argument("command") as String)
+                Shell.SU.run(call.argument("command")!!)
                 result.success(null)
             }
             "setExecutable" -> {
-                File(call.argument("path") as String).setExecutable(true)
+                File(call.argument<String>("path")!!).setExecutable(true)
                 result.success(null)
             }
             else -> result.notImplemented()

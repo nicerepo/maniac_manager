@@ -30,12 +30,13 @@ class NativeAppsChannel private constructor(private val registrar: Registrar) : 
     private var pendingResult: Result? = null
 
     override fun onMethodCall(call: MethodCall, result: Result) {
+        // val applicationId : String = call.argument("applicationId")
         when (call.method) {
             "run" -> {
-                runApp(call.argument("applicationId") as String)
+                runApp(call.argument("applicationId")!!)
                 result.success(null)
             }
-            "getIcon" -> result.success(getAppIcon(call.argument("applicationId") as String))
+            "getIcon" -> result.success(getAppIcon(call.argument("applicationId")!!))
             "getAllInstalled" -> result.success(getAllInstalledApps())
             else -> result.notImplemented()
         }
